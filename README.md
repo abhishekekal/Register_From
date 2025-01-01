@@ -1,38 +1,39 @@
-# Registration Form REST API
+# Registration Form REST API with JSP
 
 ## Project Overview
-This project is a RESTful API built with **Spring Boot** and **Hibernate** that handles user registration. The API performs standard CRUD operations, manages user data, and stores information in a **MySQL** database.
+This project is a Spring Boot application that implements a user registration form using JSP (JavaServer Pages) for the frontend and Hibernate for ORM. The API supports CRUD operations and integrates with a MySQL database.
 
 ## Features
-- User registration with form validation
-- Data persistence using Hibernate ORM
-- REST endpoints for user operations (Create, Read, Update, Delete)
-- Error handling and validation
-- Secure password storage
+- User registration form with JSP
+- RESTful API endpoints
+- Data persistence with Hibernate
+- Custom validation and error handling
+- JSP views for user interaction
 
 ## Technologies Used
 - **Backend**: Java, Spring Boot, Hibernate
+- **Frontend**: JSP
 - **Database**: MySQL
-- **Tools**: Postman (API testing), Git, Eclipse/IntelliJ
+- **Tools**: Maven, Eclipse/IntelliJ, Postman
 - **Version Control**: GitHub
 
 ## Project Structure
 ```
-/registration-api
+/registerform
 |-- src
 |   |-- main
 |   |   |-- java
-|   |   |   |-- com.example.registration
+|   |   |   |-- com.example.registerform
 |   |   |   |   |-- controller
 |   |   |   |   |   |-- UserController.java
-|   |   |   |   |-- entity
+|   |   |   |   |-- model
 |   |   |   |   |   |-- User.java
-|   |   |   |   |-- repository
-|   |   |   |   |   |-- UserRepository.java
-|   |   |   |   |-- service
-|   |   |   |   |   |-- UserService.java
-|   |   |-- resources
-|   |   |   |-- application.properties
+|   |   |   |-- resources
+|   |   |   |   |-- application.properties
+|   |   |   |-- webapp
+|   |   |   |   |-- WEB-INF/views
+|   |   |   |   |   |-- register.jsp
+|   |   |   |   |   |-- register1.jsp
 |-- pom.xml
 |-- README.md
 ```
@@ -40,11 +41,9 @@ This project is a RESTful API built with **Spring Boot** and **Hibernate** that 
 ## Endpoints
 | Method | Endpoint               | Description                 |
 |--------|------------------------|-----------------------------|
+| GET    | /register              | Render user registration JSP|
 | POST   | /api/users/register    | Register a new user         |
-| GET    | /api/users             | Get all registered users    |
-| GET    | /api/users/{id}        | Get user by ID              |
-| PUT    | /api/users/{id}        | Update user information     |
-| DELETE | /api/users/{id}        | Delete a user by ID         |
+| GET    | /api/users             | Get all users               |
 
 ## Setup and Installation
 1. Clone the repository:
@@ -53,7 +52,7 @@ This project is a RESTful API built with **Spring Boot** and **Hibernate** that 
    ```
 2. Navigate to the project directory:
    ```
-   cd registration-api
+   cd registerform
    ```
 3. Configure the MySQL database in `application.properties`:
    ```properties
@@ -69,18 +68,11 @@ This project is a RESTful API built with **Spring Boot** and **Hibernate** that 
    ```
 
 ## Usage
-- Use Postman or any API client to test the endpoints.
-- Example request to register a user:
-   ```json
-   {
-     "username": "abhishek",
-     "email": "abhishek@example.com",
-     "password": "securepassword"
-   }
-   ```
+- Access the registration form at `http://localhost:8080/register`
+- Submit user data via the form or API endpoint.
 
 ## License
-This project is licensed under the MIT License. Feel free to modify and distribute.
+This project is licensed under the MIT License.
 
 ---
 ### Author
