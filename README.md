@@ -71,8 +71,6 @@ This project is a Spring Boot application that implements a user registration fo
 - Access the registration form at `http://localhost:8080/register`
 - Submit user data via the form or API endpoint.
 
-## License
-This project is licensed under the MIT License.
 
 ---
 ### Author
